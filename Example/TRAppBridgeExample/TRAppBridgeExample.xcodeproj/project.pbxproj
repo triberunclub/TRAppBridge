@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A7FAB952CB8260100D504C0 /* TRAppBridge in Frameworks */ = {isa = PBXBuildFile; productRef = 5A7FAB942CB8260100D504C0 /* TRAppBridge */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A11D5552CB82285000D84C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A11D53C2CB82284000D84C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A11D5432CB82284000D84C4;
+			remoteInfo = TRAppBridgeExample;
+		};
+		5A11D55F2CB82285000D84C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A11D53C2CB82284000D84C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A11D5432CB82284000D84C4;
+			remoteInfo = TRAppBridgeExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5A11D5442CB82284000D84C4 /* TRAppBridgeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRAppBridgeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A11D5542CB82285000D84C4 /* TRAppBridgeExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRAppBridgeExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A11D55E2CB82285000D84C4 /* TRAppBridgeExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRAppBridgeExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5A11D5462CB82284000D84C4 /* TRAppBridgeExample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TRAppBridgeExample;
+			sourceTree = "<group>";
+		};
+		5A11D5572CB82285000D84C4 /* TRAppBridgeExampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TRAppBridgeExampleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A11D5412CB82284000D84C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7FAB952CB8260100D504C0 /* TRAppBridge in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D5512CB82285000D84C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D55B2CB82285000D84C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A11D53B2CB82284000D84C4 = {
+			isa = PBXGroup;
+			children = (
+				5A11D5462CB82284000D84C4 /* TRAppBridgeExample */,
+				5A11D5572CB82285000D84C4 /* TRAppBridgeExampleTests */,
+				5A7FAB932CB8260100D504C0 /* Frameworks */,
+				5A11D5452CB82284000D84C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A11D5452CB82284000D84C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A11D5442CB82284000D84C4 /* TRAppBridgeExample.app */,
+				5A11D5542CB82285000D84C4 /* TRAppBridgeExampleTests.xctest */,
+				5A11D55E2CB82285000D84C4 /* TRAppBridgeExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A7FAB932CB8260100D504C0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A11D5432CB82284000D84C4 /* TRAppBridgeExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A11D5682CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExample" */;
+			buildPhases = (
+				5A11D5402CB82284000D84C4 /* Sources */,
+				5A11D5412CB82284000D84C4 /* Frameworks */,
+				5A11D5422CB82284000D84C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5A11D5462CB82284000D84C4 /* TRAppBridgeExample */,
+			);
+			name = TRAppBridgeExample;
+			packageProductDependencies = (
+				5A7FAB942CB8260100D504C0 /* TRAppBridge */,
+			);
+			productName = TRAppBridgeExample;
+			productReference = 5A11D5442CB82284000D84C4 /* TRAppBridgeExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5A11D5532CB82285000D84C4 /* TRAppBridgeExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A11D56B2CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExampleTests" */;
+			buildPhases = (
+				5A11D5502CB82285000D84C4 /* Sources */,
+				5A11D5512CB82285000D84C4 /* Frameworks */,
+				5A11D5522CB82285000D84C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A11D5562CB82285000D84C4 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5A11D5572CB82285000D84C4 /* TRAppBridgeExampleTests */,
+			);
+			name = TRAppBridgeExampleTests;
+			packageProductDependencies = (
+			);
+			productName = TRAppBridgeExampleTests;
+			productReference = 5A11D5542CB82285000D84C4 /* TRAppBridgeExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5A11D55D2CB82285000D84C4 /* TRAppBridgeExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A11D56E2CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExampleUITests" */;
+			buildPhases = (
+				5A11D55A2CB82285000D84C4 /* Sources */,
+				5A11D55B2CB82285000D84C4 /* Frameworks */,
+				5A11D55C2CB82285000D84C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A11D5602CB82285000D84C4 /* PBXTargetDependency */,
+			);
+			name = TRAppBridgeExampleUITests;
+			packageProductDependencies = (
+			);
+			productName = TRAppBridgeExampleUITests;
+			productReference = 5A11D55E2CB82285000D84C4 /* TRAppBridgeExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A11D53C2CB82284000D84C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					5A11D5432CB82284000D84C4 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					5A11D5532CB82285000D84C4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 5A11D5432CB82284000D84C4;
+					};
+					5A11D55D2CB82285000D84C4 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 5A11D5432CB82284000D84C4;
+					};
+				};
+			};
+			buildConfigurationList = 5A11D53F2CB82284000D84C4 /* Build configuration list for PBXProject "TRAppBridgeExample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A11D53B2CB82284000D84C4;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5A7FAB8B2CB8243200D504C0 /* XCLocalSwiftPackageReference "../../../TRAppBridge" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5A11D5452CB82284000D84C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A11D5432CB82284000D84C4 /* TRAppBridgeExample */,
+				5A11D5532CB82285000D84C4 /* TRAppBridgeExampleTests */,
+				5A11D55D2CB82285000D84C4 /* TRAppBridgeExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A11D5422CB82284000D84C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D5522CB82285000D84C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D55C2CB82285000D84C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A11D5402CB82284000D84C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D5502CB82285000D84C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A11D55A2CB82285000D84C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A11D5562CB82285000D84C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A11D5432CB82284000D84C4 /* TRAppBridgeExample */;
+			targetProxy = 5A11D5552CB82285000D84C4 /* PBXContainerItemProxy */;
+		};
+		5A11D5602CB82285000D84C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A11D5432CB82284000D84C4 /* TRAppBridgeExample */;
+			targetProxy = 5A11D55F2CB82285000D84C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5A11D5662CB82285000D84C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A11D5672CB82285000D84C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A11D5692CB82285000D84C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TRAppBridgeExample/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = LAT58Z69VZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A11D56A2CB82285000D84C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TRAppBridgeExample/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = LAT58Z69VZ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5A11D56C2CB82285000D84C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TRAppBridgeExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TRAppBridgeExample";
+			};
+			name = Debug;
+		};
+		5A11D56D2CB82285000D84C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TRAppBridgeExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TRAppBridgeExample";
+			};
+			name = Release;
+		};
+		5A11D56F2CB82285000D84C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TRAppBridgeExample;
+			};
+			name = Debug;
+		};
+		5A11D5702CB82285000D84C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.triberunclub.TRAppBridgeExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TRAppBridgeExample;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A11D53F2CB82284000D84C4 /* Build configuration list for PBXProject "TRAppBridgeExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A11D5662CB82285000D84C4 /* Debug */,
+				5A11D5672CB82285000D84C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A11D5682CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A11D5692CB82285000D84C4 /* Debug */,
+				5A11D56A2CB82285000D84C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A11D56B2CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A11D56C2CB82285000D84C4 /* Debug */,
+				5A11D56D2CB82285000D84C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A11D56E2CB82285000D84C4 /* Build configuration list for PBXNativeTarget "TRAppBridgeExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A11D56F2CB82285000D84C4 /* Debug */,
+				5A11D5702CB82285000D84C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5A7FAB8B2CB8243200D504C0 /* XCLocalSwiftPackageReference "../../../TRAppBridge" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../TRAppBridge;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A7FAB942CB8260100D504C0 /* TRAppBridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A7FAB8B2CB8243200D504C0 /* XCLocalSwiftPackageReference "../../../TRAppBridge" */;
+			productName = TRAppBridge;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5A11D53C2CB82284000D84C4 /* Project object */;
+}

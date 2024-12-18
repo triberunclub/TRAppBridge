@@ -62,6 +62,15 @@ dependencies: [
 ]
 ```
 
+## Example Project
+
+An example project demonstrating the usage of TRAppBridge is included in the Example folder. To run the example project:
+
+1. Open Example/TRAppBridgeExample.xcworkspace in Xcode.
+2. Build and run the TRAppBridgeExample scheme.
+
+For more details, see the Example Project README.
+
 ## Motivation
 
 Deep linking between apps can be challenging and error-prone. TRAppBridge aims to simplify this process, providing a type-safe, easy-to-use API for iOS developers. By centralizing deep linking logic and providing a consistent interface, TRAppBridge reduces the potential for errors and improves code maintainability.
