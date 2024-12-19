@@ -24,9 +24,11 @@ public class TRAppBridge {
 
 	public func application<T: ExternalApplication>(_ type: T.Type) -> T {
 		let typeName = String(describing: type)
+
 		if let existingInstance = applicationInstances[typeName] as? T {
 			return existingInstance
 		}
+
 		let newInstance = T()
 		applicationInstances[typeName] = newInstance
 
@@ -35,7 +37,11 @@ public class TRAppBridge {
 
 	public func isAppInstalled<T: ExternalApplication>(_ appType: T.Type) -> Bool {
 		let app = application(appType)
-		guard let url = URL(string: app.scheme) else {
+
+		var components = URLComponents()
+		components.scheme = app.scheme
+
+		guard let url = components.url else {
 			return false
 		}
 
@@ -55,26 +61,21 @@ public class TRAppBridge {
 		completion: @escaping (Result<Void, TRAppBridgeError>) -> Void
 	) {
 		let app = application(appType)
-		let baseURL = URL(string: app.scheme)
+
+		var components = URLComponents()
+		components.scheme = app.scheme
+
 		let path = action.paths
 
 		// Combine URL logic
-		guard let baseURL = URL(string: app.scheme), isAppInstalled(appType) else {
+		guard let baseURL = components.url, isAppInstalled(appType) else {
 			handleAppNotInstalled(app: app, promptInstall: promptInstall, completion: completion)
 			return
 		}
 
-#if canImport(UIKit)
-		UIApplication.shared.open(baseURL, options: [:]) { success in
-			completion(success ? .success(()) : .failure(.failedToOpenURL))
-		}
-#elseif os(macOS)
-		NSWorkspace.shared.open(baseURL) { success in
-			completion(success ? .success(()) : .failure(.failedToOpenURL))
-		}
-#else
-		completion(.failure(.platformNotSupported))
-#endif
+		let completeUrl = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
+
+		open(url: completeUrl, completion: completion)
 	}
 
 	private func handleAppNotInstalled<T: ExternalApplication>(
@@ -84,25 +85,31 @@ public class TRAppBridge {
 	) {
 		if promptInstall, !app.appStoreId.isEmpty {
 			open(AppStoreApplication.self, action: .app(id: app.appStoreId), completion: completion)
-
-			return
-		} else {
-			completion(.failure(.failedToOpenAppStore))
 			return
 		}
+//		else {
+//			completion(.failure(.failedToOpenAppStore))
+//			return
+//		}
 
 		guard let fallbackUrl = URL(string: app.fallbackURL) else {
 			completion(.failure(.invalidFallbackURL))
 			return
 		}
 
+		open(url: fallbackUrl, completion: completion)
+	}
+
+	private func open(url: URL, completion: @escaping (Result<Void, TRAppBridgeError>) -> Void) {
 #if canImport(UIKit)
-		UIApplication.shared.open(fallbackUrl, options: [:]) { success in
+		UIApplication.shared.open(url, options: [:]) { success in
 			completion(success ? .success(()) : .failure(.failedToOpenURL))
 		}
 #elseif os(macOS)
-		let success = NSWorkspace.shared.open(fallbackUrl)
+		let success = NSWorkspace.shared.open(url)
 		completion(success ? .success(()) : .failure(.failedToOpenURL))
+#else
+		completion(.failure(.platformNotSupported))
 #endif
 	}
 }

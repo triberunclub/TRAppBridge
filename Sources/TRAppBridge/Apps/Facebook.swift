@@ -11,7 +11,7 @@ public struct FacebookApplication: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
-	public let scheme = "fb://"
+	public let scheme = "fb"
 	public let fallbackURL = "https://www.facebook.com"
 	public let appStoreId = "284882215"
 

@@ -26,11 +26,13 @@ public struct Path {
 	// MARK: Implementations
 
 	public func appendToURL(_ baseURL: String) -> URL? {
-		guard var components = URLComponents(string: baseURL) else { return nil }
+		var urlString = baseURL
 
 		if !pathComponents.isEmpty {
-			components.path = "/" + pathComponents.joined(separator: "/")
+			urlString += "//\(pathComponents.joined(separator: "/"))"
 		}
+
+		guard var components = URLComponents(string: urlString) else { return nil }
 
 		if !queryParameters.isEmpty {
 			components.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }

@@ -11,7 +11,7 @@ public struct AppStoreApplication: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
-	public let scheme = "itms-apps:"
+	public let scheme = "itms-apps"
 	public let fallbackURL = "http:"
 	public let appStoreId = ""
 
