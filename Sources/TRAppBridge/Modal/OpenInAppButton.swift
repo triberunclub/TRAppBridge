@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct OpenInAppButton<Content: View>: View {
-	
+public struct OpenInAppButton<Content: View>: View {
+
 	var id: String
 	var apps: [AnyApplication]
 	var label: () -> Content
@@ -16,14 +16,14 @@ struct OpenInAppButton<Content: View>: View {
 	
 	@State private var showSheet: Bool = false
 	
-	init(id: String, apps: [AnyApplication?], @ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil) {
+	public init(id: String, apps: [AnyApplication?], @ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
 		self.label = label
 		self.perform = perform
 	}
 	
-	var body: some View {
+	public var body: some View {
 		Button {
 			if UserDefaults.standard.bool(forKey: id),
 				 let appScheme = TRAppBridge.shared.defaultApp(for: id) {

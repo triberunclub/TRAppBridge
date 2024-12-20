@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct AnyApplication {
+public struct AnyApplication {
 
 	var name: String
 	var icon: String
 	var scheme: String
 	var open: () -> Void
 
-	init?<T: ExternalApplication>(_ app: T,
+	public init?<T: ExternalApplication>(_ app: T,
 																action: T.ActionType,
 																completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) {
 		if !TRAppBridge.shared.isAppInstalled(T.self) {
@@ -32,7 +32,7 @@ struct AnyApplication {
 	}
 }
 
-struct OpenInAppSheet: View {
+public struct OpenInAppSheet: View {
 
 	var id: String
 	var apps: [AnyApplication]
@@ -40,13 +40,13 @@ struct OpenInAppSheet: View {
 
 	@State private var rememberApp: Bool = false
 
-	init(id: String, apps: [AnyApplication?], didTap: ((AnyApplication) -> Void)? = nil) {
+	public init(id: String, apps: [AnyApplication?], didTap: ((AnyApplication) -> Void)? = nil) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
 		self.didTap = didTap
 	}
 
-	var body: some View {
+	public var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
 			Text("Open with", bundle: .main)
 				.font(.title2)
