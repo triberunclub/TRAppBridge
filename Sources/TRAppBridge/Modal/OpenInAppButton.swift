@@ -26,7 +26,8 @@ public struct OpenInAppButton<Content: View>: View {
 	public init(
 		id: String,
 		apps: [AnyApplication?],
-		@ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil
+		@ViewBuilder label: @escaping () -> Content,
+		perform: (() -> Void)? = nil
 	) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
@@ -37,7 +38,8 @@ public struct OpenInAppButton<Content: View>: View {
 	public init(
 		id: String,
 		actionGroup: ActionGroup,
-		@ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil
+		@ViewBuilder label: @escaping () -> Content,
+		perform: (() -> Void)? = nil
 	) {
 		self.id = id
 		self.apps = actionGroup.apps.compactMap { $0 }
