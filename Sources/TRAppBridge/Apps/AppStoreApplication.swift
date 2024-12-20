@@ -11,6 +11,8 @@ public struct AppStoreApplication: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
+	public var name: String = "AppStore"
+	public var icon: String = ""
 	public let scheme = "itms-apps"
 	public let fallbackURL = "http:"
 	public let appStoreId = ""
@@ -18,9 +20,7 @@ public struct AppStoreApplication: ExternalApplication {
 	// MARK: Init
 
 	public init() {}
-}
 
-public extension AppStoreApplication {
 	public enum Action: ExternalApplicationAction {
 		case account(id: String)
 		case app(id: String)

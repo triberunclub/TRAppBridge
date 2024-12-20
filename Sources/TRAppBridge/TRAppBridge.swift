@@ -10,7 +10,7 @@ import AppKit
 public class TRAppBridge {
 	// MARK: Stored Properties
 
-	private var applicationInstances: [String: any ExternalApplication] = [:]
+	private var applicationInstances: [String : any ExternalApplication] = [:]
 
 	// MARK: Singleton
 
@@ -21,6 +21,10 @@ public class TRAppBridge {
 	private init() {}
 
 	// MARK: Methods
+
+	public func defaultApp(for id: String) -> String? {
+		UserDefaults.standard.string(forKey: id + ".app_to_use")
+	}
 
 	public func application<T: ExternalApplication>(_ type: T.Type) -> T {
 		let typeName = String(describing: type)
@@ -68,14 +72,36 @@ public class TRAppBridge {
 		let path = action.paths
 
 		// Combine URL logic
+		guard let baseURL = components.url, isAppInstalled(type(of: app)) else {
+			handleAppNotInstalled(app: app, promptInstall: promptInstall, completion: completion)
+			return
+		}
+
+		let new = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
+
+		open(url: new, completion: completion)
+	}
+
+	public func open<T: ExternalApplication>(
+		_ appType: T.Type,
+		path: ActionPaths,
+		promptInstall: Bool = false,
+		completion: @escaping (Result<Void, TRAppBridgeError>) -> Void
+	) {
+		let app = application(appType)
+
+		var components = URLComponents()
+		components.scheme = app.scheme
+
+		// Combine URL logic
 		guard let baseURL = components.url, isAppInstalled(appType) else {
 			handleAppNotInstalled(app: app, promptInstall: promptInstall, completion: completion)
 			return
 		}
 
-		let completeUrl = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
+		let new = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
 
-		open(url: completeUrl, completion: completion)
+		open(url: new, completion: completion)
 	}
 
 	private func handleAppNotInstalled<T: ExternalApplication>(

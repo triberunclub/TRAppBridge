@@ -4,6 +4,12 @@ import Foundation
 public protocol ExternalApplication {
 	associatedtype ActionType: ExternalApplicationAction
 
+	/// The name of the application.
+	var name: String { get }
+
+	/// The icon of the application.
+	var icon: String { get }
+
 	/// The URL scheme used to open the application.
 	var scheme: String { get }
 

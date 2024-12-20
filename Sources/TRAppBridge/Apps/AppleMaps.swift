@@ -11,6 +11,8 @@ public struct AppleMapsApplication: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
+	public var name: String = "Apple Maps"
+	public var icon: String = "apple-maps"
 	public let scheme = "maps"
 	public let fallbackURL = ""
 	public let appStoreId = ""
@@ -18,16 +20,13 @@ public struct AppleMapsApplication: ExternalApplication {
 	// MARK: Init
 
 	public init() {}
-}
 
-public extension AppleMapsApplication {
-
-	enum Action: ExternalApplicationAction {
+	public enum Action: ExternalApplicationAction {
 
 		case open
 		case show(address: String)
-		case showCoordinates(lat: Double, lon: Double)
-		case displayDirections(start: String?, end: String, mode: Mode, mapType: MapType? = nil)
+		case showCoordinates(lat: Double, lng: Double)
+		case showDirections(start: String?, end: String, mode: Mode, mapType: MapType? = nil)
 
 		public enum Mode: String {
 			case car = "d"
@@ -69,7 +68,7 @@ public extension AppleMapsApplication {
 					)
 				)
 
-			case let .displayDirections(start, end, mode, mapType):
+			case let .showDirections(start, end, mode, mapType):
 				var params = [
 					"daddr": end,
 					"dirflg": mode.rawValue,

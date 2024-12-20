@@ -11,6 +11,8 @@ public struct FacebookApplication: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
+	public var name: String = "Facebook"
+	public var icon: String = "facebook"
 	public let scheme = "fb"
 	public let fallbackURL = "https://www.facebook.com"
 	public let appStoreId = "284882215"
@@ -18,9 +20,7 @@ public struct FacebookApplication: ExternalApplication {
 	// MARK: Init
 
 	public init() {}
-}
 
-public extension FacebookApplication {
 	public enum Action: ExternalApplicationAction {
 		case open
 		case profile
