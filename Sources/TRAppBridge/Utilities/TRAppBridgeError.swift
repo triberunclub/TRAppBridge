@@ -32,25 +32,25 @@ public enum TRAppBridgeError: Error {
 	public var localizedDescription: String {
 		switch self {
 		case .invalidURL:
-			return "The URL for the app action is invalid."
+			return String(localized: "The URL for the app action is invalid.", bundle: .module)
 
 		case .appNotInstalled:
-			return "The application is not installed on this device."
+			return String(localized: "The application is not installed on this device.", bundle: .module)
 
 		case .failedToOpenURL:
-			return "Failed to open the URL. Please ensure the app supports this action."
+			return String(localized: "Failed to open the URL. Please ensure the app supports this action.", bundle: .module)
 
 		case .failedToOpenFallbackURL:
-			return "Failed to open the fallback URL."
+			return String(localized: "Failed to open the fallback URL.", bundle: .module)
 
 		case .invalidFallbackURL:
-			return "The fallback URL is invalid or malformed."
+			return String(localized: "The fallback URL is invalid or malformed.", bundle: .module)
 
 		case .platformNotSupported:
-			return "This platform is not supported for opening URLs."
+			return String(localized: "This platform is not supported for opening URLs.", bundle: .module)
 
 		case .failedToOpenAppStore:
-			return "Could not open the App Store to install the app."
+			return String(localized: "Could not open the App Store to install the app.", bundle: .module)
 		}
 	}
 }

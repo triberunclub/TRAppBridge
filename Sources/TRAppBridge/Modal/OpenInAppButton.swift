@@ -49,8 +49,10 @@ public struct OpenInAppButton<Content: View>: View {
 
 	public var body: some View {
 		Button {
-			if UserDefaults.standard.bool(forKey: id), let appScheme = TRAppBridge.shared.defaultApp(for: id) {
-				apps.first(where: { $0.scheme == appScheme })?.open()
+			if UserDefaults.standard.bool(forKey: id),
+				 let appScheme = TRAppBridge.shared.defaultApp(for: id),
+				 let app = apps.first(where: { $0.scheme == appScheme }) {
+				app.open()
 			} else {
 				showSheet = true
 			}

@@ -1,6 +1,39 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Could not open the App Store to install the app." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile aprire l’AppStore."
+          }
+        }
+      }
+    },
+    "Failed to open the fallback URL." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile aprire l’URL per scaricare l’app."
+          }
+        }
+      }
+    },
+    "Failed to open the URL. Please ensure the app supports this action." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile aprire l’URL. Assicurati che l’app supporti questa azione."
+          }
+        }
+      }
+    },
     "Open with" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,6 +52,50 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ricorda l’applicazione da usare"
+          }
+        }
+      }
+    },
+    "The application is not installed on this device." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’applicazione non è installata."
+          }
+        }
+      }
+    },
+    "The fallback URL is invalid or malformed." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’URL di fallback non è valido o corrotto."
+          }
+        }
+      }
+    },
+    "The URL for the app action is invalid." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L’URL dell’applicazione non è valido."
+          }
+        }
+      }
+    },
+    "This platform is not supported for opening URLs." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa piattaforma non può aprire gli URL."
           }
         }
       }
