@@ -8,15 +8,20 @@
 import SwiftUI
 
 public struct AnyApplication {
+	// MARK: Stored Properties
 
 	var name: String
 	var icon: String
 	var scheme: String
 	var open: () -> Void
 
-	public init?<T: ExternalApplication>(_ app: T,
-																action: T.ActionType,
-																completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) {
+	// MARK: Init
+
+	public init?<T: ExternalApplication>(
+		_ app: T,
+		action: T.ActionType,
+		completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil
+	) {
 		if !TRAppBridge.shared.isAppInstalled(T.self) {
 			return nil
 		}
@@ -32,19 +37,30 @@ public struct AnyApplication {
 	}
 }
 
+@available(iOS 16.0, *)
 public struct OpenInAppSheet: View {
+	// MARK: Stored Properties
 
 	var id: String
 	var apps: [AnyApplication]
 	var didTap: ((AnyApplication) -> Void)?
 
+	// MARK: Wrapped Properties
+
 	@State private var rememberApp: Bool = false
 
-	public init(id: String, apps: [AnyApplication?], didTap: ((AnyApplication) -> Void)? = nil) {
+	// MARK: Body
+
+	public init(
+		id: String, apps: [AnyApplication?],
+		didTap: ((AnyApplication) -> Void)? = nil
+	) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
 		self.didTap = didTap
 	}
+
+	// MARK: Body
 
 	public var body: some View {
 		VStack(alignment: .leading, spacing: 16) {

@@ -7,31 +7,42 @@
 
 import SwiftUI
 
+@available(iOS 16.0, *)
 public struct OpenInAppButton<Content: View>: View {
+	// MARK: Stored Properties
 
 	var id: String
 	var apps: [AnyApplication]
 	var label: () -> Content
 	var perform: (() -> Void)?
-	
+
+	// MARK: Wrapped Properties
+
 	@State private var showSheet: Bool = false
-	
-	public init(id: String, apps: [AnyApplication?], @ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil) {
+
+	// MARK: Init
+
+	public init(
+		id: String,
+		apps: [AnyApplication?],
+		@ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil
+	) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
 		self.label = label
 		self.perform = perform
 	}
-	
+
+	// MARK: Body
+
 	public var body: some View {
 		Button {
-			if UserDefaults.standard.bool(forKey: id),
-				 let appScheme = TRAppBridge.shared.defaultApp(for: id) {
+			if UserDefaults.standard.bool(forKey: id), let appScheme = TRAppBridge.shared.defaultApp(for: id) {
 				apps.first(where: { $0.scheme == appScheme })?.open()
 			} else {
 				showSheet = true
 			}
-			
+
 			perform?()
 		} label: {
 			label()
