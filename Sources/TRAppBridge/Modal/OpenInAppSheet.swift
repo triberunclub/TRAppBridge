@@ -64,7 +64,7 @@ public struct OpenInAppSheet: View {
 
 	public var body: some View {
 		VStack(alignment: .leading, spacing: 16) {
-			Text("Open with", bundle: .main)
+			Text("Open with", bundle: .module)
 				.font(.title2)
 
 			VStack(spacing: 8) {
@@ -78,7 +78,7 @@ public struct OpenInAppSheet: View {
 						didTap?(app)
 					} label: {
 						HStack(spacing: 20) {
-							Image(app.icon)
+							Image(app.icon, bundle: .module)
 								.resizable()
 								.scaledToFit()
 								.frame(width: 50, height: 50)
@@ -106,7 +106,7 @@ public struct OpenInAppSheet: View {
 				}
 			}
 
-			Toggle(String(localized: "Remember the app to use"), isOn: $rememberApp)
+			Toggle(String(localized: "Remember the app to use", bundle: .module), isOn: $rememberApp)
 				.font(.footnote)
 				.foregroundStyle(.secondary)
 

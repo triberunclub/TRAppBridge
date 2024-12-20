@@ -1,10 +1,10 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 import PackageDescription
 
 let package = Package(
 	name: "TRAppBridge",
 	platforms: [
-		.iOS(.v13)
+		.iOS(.v16)
 	],
 	products: [
 		.library(
@@ -14,13 +14,11 @@ let package = Package(
 			]
 		),
 	],
-	dependencies: [
-		// Add any external dependencies here
-	],
 	targets: [
 		.target(
 			name: "TRAppBridge",
 			dependencies: [],
+			resources: [.process("Resources")],
 			swiftSettings: [
 				.define("IMPORT_UIKIT", .when(platforms: [.iOS]))
 			]

@@ -9,6 +9,7 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 public struct OpenInAppButton<Content: View>: View {
+
 	// MARK: Stored Properties
 
 	var id: String
@@ -29,6 +30,17 @@ public struct OpenInAppButton<Content: View>: View {
 	) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
+		self.label = label
+		self.perform = perform
+	}
+
+	public init(
+		id: String,
+		actionGroup: ActionGroup,
+		@ViewBuilder label: @escaping () -> Content, perform: (() -> Void)? = nil
+	) {
+		self.id = id
+		self.apps = actionGroup.apps.compactMap { $0 }
 		self.label = label
 		self.perform = perform
 	}

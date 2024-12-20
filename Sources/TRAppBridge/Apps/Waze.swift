@@ -26,7 +26,8 @@ public struct Waze: ExternalApplication {
 	public enum Action: ExternalApplicationAction {
 
 		case open
-		case navigateToDirection(lat: String, lng: String)
+		case showLocation(lat: Double, lng: Double)
+		case navigateToDirection(lat: Double, lng: Double)
 
 		public var paths: ActionPaths {
 			switch self {
@@ -35,6 +36,18 @@ public struct Waze: ExternalApplication {
 					app: Path(
 						pathComponents: ["app"],
 						queryParameters: [:]
+					),
+					web: Path()
+				)
+
+			case .showLocation(let lat, let lng):
+				return ActionPaths(
+					app: Path(
+						pathComponents: [""],
+						queryParameters: [
+							"ll": "\(lat),\(lng)",
+							"navigate": "no",
+						]
 					),
 					web: Path()
 				)
