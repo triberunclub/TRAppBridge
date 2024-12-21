@@ -52,12 +52,21 @@ public struct OpenInAppSheet: View {
 	// MARK: Body
 
 	public init(
-		id: String, apps: [AnyApplication?],
+		id: String,
+		apps: [AnyApplication?],
 		didTap: ((AnyApplication) -> Void)? = nil
 	) {
 		self.id = id
 		self.apps = apps.compactMap { $0 }
 		self.didTap = didTap
+	}
+
+	public init(
+		id: String,
+		actionGroup: ActionGroup,
+		didTap: ((AnyApplication) -> Void)? = nil
+	) {
+		self.init(id: id, apps: actionGroup.apps, didTap: didTap)
 	}
 
 	// MARK: Body

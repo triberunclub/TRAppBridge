@@ -41,10 +41,7 @@ public struct OpenInAppButton<Content: View>: View {
 		@ViewBuilder label: @escaping () -> Content,
 		perform: (() -> Void)? = nil
 	) {
-		self.id = id
-		self.apps = actionGroup.apps.compactMap { $0 }
-		self.label = label
-		self.perform = perform
+		self.init(id: id, apps: actionGroup.apps, label: label, perform: perform)
 	}
 
 	// MARK: Body
