@@ -38,7 +38,7 @@ public struct Path {
 		urlComponents?.queryItems = queryItems.isEmpty ? nil : queryItems
 
 		var pathComponents = self.pathComponents
-print("scheme", urlComponents?.scheme)
+
 		if let firstPath = pathComponents.first, (urlComponents?.host == nil || urlComponents?.host?.isEmpty == true) {
 			if scheme.contains("://") == true {
 				urlComponents?.host = firstPath

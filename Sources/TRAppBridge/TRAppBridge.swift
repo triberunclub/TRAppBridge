@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 #if canImport(UIKit)
 import UIKit
@@ -56,6 +57,28 @@ public class TRAppBridge {
 #else
 		return false
 #endif
+	}
+
+	public func open(forId id: String, actionGroup: ActionGroup, completion: (ActionGroup?) -> Void) {
+		if UserDefaults.standard.bool(forKey: id),
+			 let appScheme = defaultApp(for: id),
+			 let app = actionGroup.apps.compactMap({ $0 }).first(where: { $0.scheme == appScheme }) {
+			app.open()
+			completion(nil)
+		} else {
+			completion(actionGroup)
+		}
+	}
+
+	public func open(forId id: String, apps: [AnyApplication?], completion: ([AnyApplication?]?) -> Void) {
+		if UserDefaults.standard.bool(forKey: id),
+			 let appScheme = defaultApp(for: id),
+			 let app = apps.compactMap({ $0 }).first(where: { $0.scheme == appScheme }) {
+			app.open()
+			completion(nil)
+		} else {
+			completion(apps)
+		}
 	}
 
 	public func open<T: ExternalApplication>(

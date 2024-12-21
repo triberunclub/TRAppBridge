@@ -7,10 +7,17 @@
 
 import Foundation
 
-public enum ActionGroup {
+public enum ActionGroup: Identifiable {
 
 	case showLocation(lat: Double, lng: Double)
 	case sendEmail(recipient: String, subject: String, body: String)
+
+	var id: String {
+		switch self {
+		case .showLocation: return "0"
+		case .sendEmail: return "1"
+		}
+	}
 
 	var apps: [AnyApplication?] {
 		switch self {

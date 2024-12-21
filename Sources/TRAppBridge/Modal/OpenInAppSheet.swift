@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-public struct AnyApplication {
+public struct AnyApplication: Identifiable {
+
 	// MARK: Stored Properties
 
+	public var id: String { name }
 	var name: String
 	var icon: String
 	var scheme: String
