@@ -15,7 +15,7 @@ public struct Waze: ExternalApplication {
 
 	public var name: String = "Waze"
 	public var icon: String = "waze"
-	public let scheme = "waze"
+	public let scheme = "waze://"
 	public let fallbackURL = "https://www.waze.com"
 	public let appStoreId = "323229106"
 

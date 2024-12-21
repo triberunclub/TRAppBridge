@@ -14,7 +14,7 @@ public struct GoogleMapsApplication: ExternalApplication {
 
 	public var name: String = "Google Maps"
 	public var icon: String = "google-maps"
-	public let scheme = "comgooglemaps"
+	public let scheme = "comgooglemaps://"
 	public let fallbackURL = "https://maps.google.com"
 	public let appStoreId = "585027354"
 

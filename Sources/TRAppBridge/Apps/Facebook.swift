@@ -13,7 +13,7 @@ public struct FacebookApplication: ExternalApplication {
 	public typealias ActionType = Action
 	public var name: String = "Facebook"
 	public var icon: String = "facebook"
-	public let scheme = "fb"
+	public let scheme = "fb://"
 	public let fallbackURL = "https://www.facebook.com"
 	public let appStoreId = "284882215"
 

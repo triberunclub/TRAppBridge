@@ -13,8 +13,8 @@ public struct AppStoreApplication: ExternalApplication {
 	public typealias ActionType = Action
 	public var name: String = "AppStore"
 	public var icon: String = ""
-	public let scheme = "itms-apps"
-	public let fallbackURL = "http:"
+	public let scheme = "itms-apps:"
+	public let fallbackURL = "https:"
 	public let appStoreId = ""
 
 	// MARK: Init

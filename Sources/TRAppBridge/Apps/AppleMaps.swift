@@ -13,7 +13,7 @@ public struct AppleMapsApplication: ExternalApplication {
 	public typealias ActionType = Action
 	public var name: String = "Apple Maps"
 	public var icon: String = "apple-maps"
-	public let scheme = "maps"
+	public let scheme = "maps:"
 	public let fallbackURL = ""
 	public let appStoreId = ""
 

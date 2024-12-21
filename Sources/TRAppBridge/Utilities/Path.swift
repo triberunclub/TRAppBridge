@@ -13,6 +13,10 @@ public struct Path {
 	public var pathComponents: [String]
 	public var queryParameters: [String: String]
 
+	public var queryItems: [URLQueryItem] {
+		queryParameters.map { URLQueryItem(name: $0, value: $1) }
+	}
+
 	// MARK: Init
 
 	public init(
@@ -25,19 +29,30 @@ public struct Path {
 
 	// MARK: Implementations
 
-	public func appendToURL(_ baseURL: String) -> URL? {
-		var urlString = baseURL
+	public func appendToURL(_ baseURL: String, scheme: String) -> URL? {
+		guard let url = URL(string: baseURL) else {
+			return nil
+		}
+
+		var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+		urlComponents?.queryItems = queryItems.isEmpty ? nil : queryItems
+
+		var pathComponents = self.pathComponents
+print("scheme", urlComponents?.scheme)
+		if let firstPath = pathComponents.first, (urlComponents?.host == nil || urlComponents?.host?.isEmpty == true) {
+			if scheme.contains("://") == true {
+				urlComponents?.host = firstPath
+			} else {
+				urlComponents?.path = firstPath
+			}
+
+			pathComponents = Array(pathComponents.dropFirst())
+		}
 
 		if !pathComponents.isEmpty {
-			urlString += "//\(pathComponents.joined(separator: "/"))"
+			urlComponents?.path += "/" + pathComponents.joined(separator: "/")
 		}
 
-		guard var components = URLComponents(string: urlString) else { return nil }
-
-		if !queryParameters.isEmpty {
-			components.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
-		}
-
-		return components.url
+		return urlComponents?.url
 	}
 }

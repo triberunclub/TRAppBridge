@@ -42,10 +42,10 @@ public class TRAppBridge {
 	public func isAppInstalled<T: ExternalApplication>(_ appType: T.Type) -> Bool {
 		let app = application(appType)
 
-		var components = URLComponents()
-		components.scheme = app.scheme
+//		var components = URLComponents()
+//		components.scheme = app.scheme
 
-		guard let url = components.url else {
+		guard let url = URL(string: app.scheme) else {
 			return false
 		}
 
@@ -66,40 +66,16 @@ public class TRAppBridge {
 	) {
 		let app = application(appType)
 
-		var components = URLComponents()
-		components.scheme = app.scheme
-
-		let path = action.paths
+		let baseURL = URL(string: app.scheme)
+		let paths = action.paths
 
 		// Combine URL logic
-		guard let baseURL = components.url, isAppInstalled(type(of: app)) else {
+		guard let baseURL, isAppInstalled(appType) else {
 			handleAppNotInstalled(app: app, promptInstall: promptInstall, completion: completion)
 			return
 		}
 
-		let new = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
-
-		open(url: new, completion: completion)
-	}
-
-	public func open<T: ExternalApplication>(
-		_ appType: T.Type,
-		path: ActionPaths,
-		promptInstall: Bool = false,
-		completion: @escaping (Result<Void, TRAppBridgeError>) -> Void
-	) {
-		let app = application(appType)
-
-		var components = URLComponents()
-		components.scheme = app.scheme
-
-		// Combine URL logic
-		guard let baseURL = components.url, isAppInstalled(appType) else {
-			handleAppNotInstalled(app: app, promptInstall: promptInstall, completion: completion)
-			return
-		}
-
-		let new = path.app.appendToURL(baseURL.absoluteString) ?? baseURL
+		let new = paths.app.appendToURL(baseURL.absoluteString, scheme: app.scheme) ?? baseURL
 
 		open(url: new, completion: completion)
 	}

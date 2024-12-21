@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "yahoo-mail.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -32,25 +32,25 @@ public enum TRAppBridgeError: Error {
 	public var localizedDescription: String {
 		switch self {
 		case .invalidURL:
-			return String(localized: "The URL for the app action is invalid.", bundle: .module)
+			return NSLocalizedString("The URL for the app action is invalid.", bundle: .module, comment: "")
 
 		case .appNotInstalled:
-			return String(localized: "The application is not installed on this device.", bundle: .module)
+			return NSLocalizedString("The application is not installed on this device.", bundle: .module, comment: "")
 
 		case .failedToOpenURL:
-			return String(localized: "Failed to open the URL. Please ensure the app supports this action.", bundle: .module)
+			return NSLocalizedString("Failed to open the URL. Please ensure the app supports this action.", bundle: .module, comment: "")
 
 		case .failedToOpenFallbackURL:
-			return String(localized: "Failed to open the fallback URL.", bundle: .module)
+			return NSLocalizedString("Failed to open the fallback URL.", bundle: .module, comment: "")
 
 		case .invalidFallbackURL:
-			return String(localized: "The fallback URL is invalid or malformed.", bundle: .module)
+			return NSLocalizedString("The fallback URL is invalid or malformed.", bundle: .module, comment: "")
 
 		case .platformNotSupported:
-			return String(localized: "This platform is not supported for opening URLs.", bundle: .module)
+			return NSLocalizedString("This platform is not supported for opening URLs.", bundle: .module, comment: "")
 
 		case .failedToOpenAppStore:
-			return String(localized: "Could not open the App Store to install the app.", bundle: .module)
+			return NSLocalizedString("Could not open the App Store to install the app.", bundle: .module, comment: "")
 		}
 	}
 }

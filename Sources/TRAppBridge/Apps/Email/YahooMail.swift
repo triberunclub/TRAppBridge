@@ -1,0 +1,48 @@
+//
+//  YahooMail.swift
+//  TRAppBridge
+//
+//  Created by Francesco Leoni on 21/12/24.
+//
+
+import Foundation
+
+public struct YahooMail: ExternalApplication {
+
+	public typealias ActionType = Action
+
+	public var name: String = "Yahoo Mail"
+	public var icon: String = "yahoo-mail"
+	public let scheme = "ymail://"
+	public let fallbackURL = "https://mail.yahoo.com"
+	public let appStoreId = "577586159"
+
+	public init() {}
+
+	public enum Action: ExternalApplicationAction {
+
+		case open
+		case send(recipient: String, subject: String, body: String)
+
+		public var paths: ActionPaths {
+			switch self {
+			case .open:
+				return ActionPaths(
+					app: Path(
+						pathComponents: ["app"]
+					)
+				)
+
+			case let .send(recipient, subject, body):
+				return ActionPaths(
+					app: Path(
+						pathComponents: ["mail/compose"],
+						queryParameters: ["to": recipient,
+															"subject": subject,
+															"body": body]
+					)
+				)
+			}
+		}
+	}
+}
