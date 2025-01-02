@@ -11,27 +11,36 @@ public enum ActionGroup: Identifiable {
 
 	case showLocation(lat: Double, lng: Double)
 	case sendEmail(recipient: String, subject: String, body: String)
+	case openMailApp
 
 	public var id: String {
 		switch self {
 		case .showLocation: return "0"
 		case .sendEmail: return "1"
+		case .openMailApp: return "2"
 		}
 	}
 
 	var apps: [AnyApplication?] {
 		switch self {
 		case .showLocation(let lat, let lng):
-			return [AnyApplication(AppleMapsApplication(), action: .showCoordinates(lat: lat, lng: lng)),
-							AnyApplication(GoogleMapsApplication(), action: .search(query: "\(lat),\(lng)")),
-							AnyApplication(Waze(), action: .showLocation(lat: lat, lng: lng))]
+			return [.appleMaps(action: .showCoordinates(lat: lat, lng: lng)),
+							.googleMaps(action: .search(query: "\(lat),\(lng)")),
+							.waze(action: .showLocation(lat: lat, lng: lng))]
 
 		case let .sendEmail(recipient, subject, body):
-			return [AnyApplication(AppleMail(), action: .send(recipient: recipient, subject: subject, body: body)),
-							AnyApplication(GoogleMail(), action: .send(recipient: recipient, subject: subject, body: body)),
-							AnyApplication(Outlook(), action: .send(recipient: recipient, subject: subject, body: body)),
-							AnyApplication(YahooMail(), action: .send(recipient: recipient, subject: subject, body: body)),
-							AnyApplication(SparkMail(), action: .send(recipient: recipient, subject: subject, body: body))]
+			return [.appleMail(action: .send(recipient: recipient, subject: subject, body: body)),
+							.googleMail(action: .send(recipient: recipient, subject: subject, body: body)),
+							.outlook(action: .send(recipient: recipient, subject: subject, body: body)),
+							.yahooMail(action: .send(recipient: recipient, subject: subject, body: body)),
+							.sparkMail(action: .send(recipient: recipient, subject: subject, body: body))]
+
+		case .openMailApp:
+			return [.appleMailOpener(action: .open),
+							.googleMail(action: .open),
+							.outlook(action: .open),
+							.yahooMail(action: .open),
+							.sparkMail(action: .open)]
 		}
 	}
 }

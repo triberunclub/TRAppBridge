@@ -7,43 +7,11 @@
 
 import SwiftUI
 
-public struct AnyApplication: Identifiable {
-
-	// MARK: Stored Properties
-
-	public var id: String { name }
-	var name: String
-	var icon: String
-	var scheme: String
-	var open: () -> Void
-
-	// MARK: Init
-
-	public init?<T: ExternalApplication>(
-		_ app: T,
-		action: T.ActionType,
-		completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil
-	) {
-		if !TRAppBridge.shared.isAppInstalled(T.self) {
-			return nil
-		}
-
-		self.name = app.name
-		self.icon = app.icon
-		self.scheme = app.scheme
-		self.open = {
-			TRAppBridge.shared.open(T.self, action: action) { result in
-				completion?(result)
-			}
-		}
-	}
-}
-
 @available(iOS 16.0, *)
 public struct OpenInAppSheet: View {
 	// MARK: Stored Properties
 
-	var id: String
+	var id: SheetIdentifier
 	var apps: [AnyApplication]
 	var didTap: ((AnyApplication) -> Void)?
 
@@ -54,7 +22,7 @@ public struct OpenInAppSheet: View {
 	// MARK: Body
 
 	public init(
-		id: String,
+		id: SheetIdentifier,
 		apps: [AnyApplication?],
 		didTap: ((AnyApplication) -> Void)? = nil
 	) {
@@ -64,7 +32,7 @@ public struct OpenInAppSheet: View {
 	}
 
 	public init(
-		id: String,
+		id: SheetIdentifier,
 		actionGroup: ActionGroup,
 		didTap: ((AnyApplication) -> Void)? = nil
 	) {

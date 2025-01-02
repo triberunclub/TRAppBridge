@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AppleMapsApplication: ExternalApplication {
+public struct AppleMaps: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
@@ -48,14 +48,14 @@ public struct AppleMapsApplication: ExternalApplication {
 			case .open:
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"]
+						pathComponents: [""]
 					)
 				)
 
 			case .show(let address):
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"],
+						pathComponents: [""],
 						queryParameters: ["address": address]
 					)
 				)
@@ -63,7 +63,7 @@ public struct AppleMapsApplication: ExternalApplication {
 			case let .showCoordinates(lat, lon):
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"],
+						pathComponents: [""],
 						queryParameters: ["address": "\(lat),\(lon)"]
 					)
 				)
@@ -84,11 +84,19 @@ public struct AppleMapsApplication: ExternalApplication {
 
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"],
+						pathComponents: [""],
 						queryParameters: params
 					)
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func appleMaps(action: AppleMaps.ActionType,
+												completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(AppleMaps(), action: action, completion: completion)
 	}
 }

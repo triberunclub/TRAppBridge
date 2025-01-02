@@ -29,7 +29,7 @@ public struct GoogleMail: ExternalApplication {
 			case .open:
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"]
+						pathComponents: []
 					)
 				)
 
@@ -44,5 +44,13 @@ public struct GoogleMail: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func googleMail(action: GoogleMail.ActionType,
+												 completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(GoogleMail(), action: action, completion: completion)
 	}
 }

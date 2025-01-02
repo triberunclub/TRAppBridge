@@ -109,7 +109,7 @@ public class TRAppBridge {
 		completion: @escaping (Result<Void, TRAppBridgeError>) -> Void
 	) {
 		if promptInstall, !app.appStoreId.isEmpty {
-			open(AppStoreApplication.self, action: .app(id: app.appStoreId), completion: completion)
+			open(AppStore.self, action: .app(id: app.appStoreId), completion: completion)
 			return
 		}
 //		else {

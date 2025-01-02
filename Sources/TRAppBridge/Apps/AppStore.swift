@@ -1,5 +1,5 @@
 //
-//  AppStoreApplication.swift
+//  AppStore.swift
 //  TRAppBridge
 //
 //  Created by Luigi Aiello on 10/10/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AppStoreApplication: ExternalApplication {
+public struct AppStore: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
@@ -58,5 +58,13 @@ public struct AppStoreApplication: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func appStore(action: AppStore.ActionType,
+											 completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(AppStore(), action: action, completion: completion)
 	}
 }

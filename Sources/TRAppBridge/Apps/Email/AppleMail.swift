@@ -21,18 +21,10 @@ public struct AppleMail: ExternalApplication {
 
 	public enum Action: ExternalApplicationAction {
 
-		case open
 		case send(recipient: String, subject: String, body: String)
 
 		public var paths: ActionPaths {
 			switch self {
-			case .open:
-				return ActionPaths(
-					app: Path(
-						pathComponents: ["app"]
-					)
-				)
-
 			case let .send(recipient, subject, body):
 				return ActionPaths(
 					app: Path(
@@ -43,5 +35,13 @@ public struct AppleMail: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func appleMail(action: AppleMail.ActionType,
+												completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(AppleMail(), action: action, completion: completion)
 	}
 }

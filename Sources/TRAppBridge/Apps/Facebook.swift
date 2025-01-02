@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct FacebookApplication: ExternalApplication {
+public struct Facebook: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
@@ -35,7 +35,7 @@ public struct FacebookApplication: ExternalApplication {
 			switch self {
 			case .open:
 				return ActionPaths(
-					app: Path(pathComponents: ["app"])
+					app: Path(pathComponents: [])
 				)
 
 			case .profile:
@@ -66,5 +66,13 @@ public struct FacebookApplication: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func facebook(action: Facebook.ActionType,
+											 completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(Facebook(), action: action, completion: completion)
 	}
 }

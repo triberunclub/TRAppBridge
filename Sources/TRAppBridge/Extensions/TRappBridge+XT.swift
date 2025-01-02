@@ -1,9 +1,9 @@
 extension TRAppBridge {
-	public var appStore: AppStoreApplication {
-		return application(AppStoreApplication.self)
+	public var appStore: AppStore {
+		return application(AppStore.self)
 	}
 
-	public var facebook: FacebookApplication {
-		return application(FacebookApplication.self)
+	public var facebook: Facebook {
+		return application(Facebook.self)
 	}
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GoogleMapsApplication: ExternalApplication {
+public struct GoogleMaps: ExternalApplication {
 	// MARK: Stored Properties
 
 	public typealias ActionType = Action
@@ -35,7 +35,7 @@ public struct GoogleMapsApplication: ExternalApplication {
 			case .open:
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"],
+						pathComponents: [],
 						queryParameters: [:]
 					),
 					web: Path()
@@ -93,5 +93,13 @@ public struct GoogleMapsApplication: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func googleMaps(action: GoogleMaps.ActionType,
+												 completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(GoogleMaps(), action: action, completion: completion)
 	}
 }

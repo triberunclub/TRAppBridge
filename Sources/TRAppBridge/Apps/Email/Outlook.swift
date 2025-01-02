@@ -8,31 +8,31 @@
 import Foundation
 
 public struct Outlook: ExternalApplication {
-
+	
 	public typealias ActionType = Action
-
+	
 	public var name: String = "Outlook"
 	public var icon: String = "outlook"
 	public let scheme = "ms-outlook://"
 	public let fallbackURL = "https://www.outlook.com/"
 	public let appStoreId = "951937596"
-
+	
 	public init() {}
-
+	
 	public enum Action: ExternalApplicationAction {
-
+		
 		case open
 		case send(recipient: String, subject: String, body: String)
-
+		
 		public var paths: ActionPaths {
 			switch self {
 			case .open:
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"]
+						pathComponents: []
 					)
 				)
-
+				
 			case let .send(recipient, subject, body):
 				return ActionPaths(
 					app: Path(
@@ -44,5 +44,13 @@ public struct Outlook: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+	
+	static func outlook(action: Outlook.ActionType,
+											completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(Outlook(), action: action, completion: completion)
 	}
 }

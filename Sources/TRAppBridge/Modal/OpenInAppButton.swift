@@ -12,7 +12,7 @@ public struct OpenInAppButton<Content: View>: View {
 
 	// MARK: Stored Properties
 
-	var id: String
+	var id: SheetIdentifier
 	var apps: [AnyApplication]
 	var label: () -> Content
 	var perform: (() -> Void)?
@@ -24,7 +24,7 @@ public struct OpenInAppButton<Content: View>: View {
 	// MARK: Init
 
 	public init(
-		id: String,
+		id: SheetIdentifier,
 		apps: [AnyApplication?],
 		@ViewBuilder label: @escaping () -> Content,
 		perform: (() -> Void)? = nil
@@ -36,7 +36,7 @@ public struct OpenInAppButton<Content: View>: View {
 	}
 
 	public init(
-		id: String,
+		id: SheetIdentifier,
 		actionGroup: ActionGroup,
 		@ViewBuilder label: @escaping () -> Content,
 		perform: (() -> Void)? = nil

@@ -29,7 +29,7 @@ public struct YahooMail: ExternalApplication {
 			case .open:
 				return ActionPaths(
 					app: Path(
-						pathComponents: ["app"]
+						pathComponents: []
 					)
 				)
 
@@ -44,5 +44,13 @@ public struct YahooMail: ExternalApplication {
 				)
 			}
 		}
+	}
+}
+
+public extension AnyApplication {
+
+	static func yahooMail(action: YahooMail.ActionType,
+												completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil) -> AnyApplication? {
+		AnyApplication(YahooMail(), action: action, completion: completion)
 	}
 }
