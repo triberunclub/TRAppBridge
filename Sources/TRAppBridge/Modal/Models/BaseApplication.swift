@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BaseApplication.swift
 //  TRAppBridge
 //
 //  Created by Francesco Leoni on 02/01/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AnyApplication: Identifiable {
+public struct BaseApplication: Identifiable {
 
 	// MARK: Stored Properties
 
@@ -15,15 +15,18 @@ public struct AnyApplication: Identifiable {
 	public var name: String
 	public var icon: String
 	public var scheme: String
-	public var open: () -> Void
 
 	// MARK: Init
 
-	public init?<T: ExternalApplication>(
-		_ app: T,
-		action: T.ActionType,
-		completion: ((Result<Void, TRAppBridgeError>) -> Void)? = nil
-	) {
+	public init?(anyApplication: AnyApplication?) {
+		guard let anyApplication else { return nil }
+
+		self.name = anyApplication.name
+		self.icon = anyApplication.icon
+		self.scheme = anyApplication.scheme
+	}
+
+	public init?<T: ExternalApplication>(_ app: T) {
 		if !TRAppBridge.shared.isAppInstalled(T.self) {
 			return nil
 		}
@@ -31,10 +34,5 @@ public struct AnyApplication: Identifiable {
 		self.name = app.name
 		self.icon = app.icon
 		self.scheme = app.scheme
-		self.open = {
-			TRAppBridge.shared.open(T.self, action: action) { result in
-				completion?(result)
-			}
-		}
 	}
 }

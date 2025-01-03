@@ -43,4 +43,35 @@ public enum ActionGroup: Identifiable {
 							.sparkMail(action: .open)]
 		}
 	}
+
+	var baseApps: [BaseApplication?] {
+		apps.map { BaseApplication(anyApplication: $0) }
+	}
+}
+
+public enum BaseActionGroup: Identifiable {
+
+	case showLocation
+	case sendEmail
+	case openMailApp
+
+	public var id: String {
+		switch self {
+		case .showLocation: return "0"
+		case .sendEmail: return "1"
+		case .openMailApp: return "2"
+		}
+	}
+
+	public var apps: [BaseApplication?] {
+		let action: ActionGroup
+
+		switch self {
+		case .showLocation: action = .showLocation(lat: 0, lng: 0)
+		case .sendEmail: action = .sendEmail(recipient: "", subject: "", body: "")
+		case .openMailApp: action = .openMailApp
+		}
+
+		return action.baseApps
+	}
 }

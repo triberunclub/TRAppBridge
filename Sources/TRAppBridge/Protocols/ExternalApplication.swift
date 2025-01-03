@@ -2,6 +2,7 @@ import Foundation
 
 /// Represents an external application that can be opened via URL scheme.
 public protocol ExternalApplication {
+	
 	associatedtype ActionType: ExternalApplicationAction
 
 	/// The name of the application.

@@ -86,7 +86,7 @@ public struct OpenInAppSheet: View {
 			}
 
 			Toggle(String(localized: "Remember the app to use", bundle: .module), isOn: $rememberApp)
-				.font(.footnote)
+				.font(.subheadline)
 				.foregroundStyle(.secondary)
 
 			Spacer()

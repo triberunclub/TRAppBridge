@@ -23,7 +23,7 @@ public class TRAppBridge {
 
 	// MARK: Methods
 
-	public func defaultApp(for id: String) -> String? {
+	public func defaultApp(for id: SheetIdentifier) -> String? {
 		UserDefaults.standard.string(forKey: id + ".app_to_use")
 	}
 
@@ -59,7 +59,7 @@ public class TRAppBridge {
 #endif
 	}
 
-	public func open(forId id: String, actionGroup: ActionGroup, completion: (ActionGroup?) -> Void) {
+	public func open(forId id: SheetIdentifier, actionGroup: ActionGroup, completion: (ActionGroup?) -> Void) {
 		if UserDefaults.standard.bool(forKey: id),
 			 let appScheme = defaultApp(for: id),
 			 let app = actionGroup.apps.compactMap({ $0 }).first(where: { $0.scheme == appScheme }) {
@@ -70,7 +70,7 @@ public class TRAppBridge {
 		}
 	}
 
-	public func open(forId id: String, apps: [AnyApplication?], completion: ([AnyApplication?]?) -> Void) {
+	public func open(forId id: SheetIdentifier, apps: [AnyApplication?], completion: ([AnyApplication?]?) -> Void) {
 		if UserDefaults.standard.bool(forKey: id),
 			 let appScheme = defaultApp(for: id),
 			 let app = apps.compactMap({ $0 }).first(where: { $0.scheme == appScheme }) {

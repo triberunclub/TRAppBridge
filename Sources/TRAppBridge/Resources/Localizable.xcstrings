@@ -12,6 +12,17 @@
         }
       }
     },
+    "Default apps" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App di default"
+          }
+        }
+      }
+    },
     "Failed to open the fallback URL." : {
       "extractionState" : "manual",
       "localizations" : {
